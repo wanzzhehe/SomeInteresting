@@ -52,10 +52,8 @@ int main() {
 		Selected[SecontSelect] = true;
 		for(int i = 0; i != 3; ++i)
 			if(!Selected[i] && i == WhichDoor) { 
-				++cnt0;
-				goto END;
+				++cnt0; break;
 			}
-END:	continue;
 	}
 	printf("Total : %llu\n", cnt);
 	printf("You win : %llu\n", cnt0);
