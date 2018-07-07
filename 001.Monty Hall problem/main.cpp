@@ -50,13 +50,18 @@ int main() {
 			SecontSelect = a() % 3;
 		}while(Selected[SecontSelect] || SecontSelect == WhichDoor);
 		Selected[SecontSelect] = true;
+		if(FirstSelect == WhichDoor) ++cnt1;
 		for(int i = 0; i != 3; ++i)
 			if(!Selected[i] && i == WhichDoor) { 
 				++cnt0; break;
 			}
 	}
 	printf("Total : %llu\n", cnt);
+	printf("If you change your choice:\n");
 	printf("You win : %llu\n", cnt0);
 	printf("You lose: %llu\n", cnt - cnt0);
+	printf("If you not change your choice:\n");
+	printf("You win : %llu\n", cnt1);
+	printf("You lose : %llu\n", cnt - cnt1);
 	return 0;
 }
